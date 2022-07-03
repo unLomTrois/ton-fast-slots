@@ -41,7 +41,8 @@ export default function Home() {
         <input
           className={styles.input}
           type="text"
-          placeholder="Enter your game key"
+          // placeholder="Enter your game key"
+          placeholder="type anything"
           value={key}
           onInput={oninput}
         />
