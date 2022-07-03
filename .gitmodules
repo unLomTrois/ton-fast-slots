@@ -1,0 +1,3 @@
+[submodule "ton-fast-slots-backend"]
+	path = ton-fast-slots-backend
+	url = https://github.com/JkLondon/ton-fast-slots-backend
