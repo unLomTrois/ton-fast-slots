@@ -428,9 +428,10 @@ export const SlotMachine = () => {
         <input
           value={input}
           type="number"
+          min={0}
           onChange={(e) => numChecker(e)}
           className={styles.betInput}
-          placeholder="0€"
+          placeholder="0 TON"
         ></input>
         <button className={styles.spinButton} onClick={() => play()}>
           Spin
