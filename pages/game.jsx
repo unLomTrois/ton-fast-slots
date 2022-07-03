@@ -49,8 +49,15 @@ export default function Game() {
 
       <footer className={styles.footer}>
         <div className={styles.wallet_card}>
-        { /* todo: copy address */ }
-          <p className={styles.wallet_card__id}>your wallet: EQCAe8p18bYfHZvf-T3EW-sBtpkYuuoPPk_zES8IOELiF_Sa</p>
+          {/* todo: copy address */}
+          <p className={styles.wallet_card__id}>
+            <span>our wallet:</span>
+            <a
+              href={`https://testnet.tonscan.org/address/${"EQCAe8p18bYfHZvf-T3EW-sBtpkYuuoPPk_zES8IOELiF_Sa"}`}
+            >
+              EQCAe8p18bYfHZvf-T3EW-sBtpkYuuoPPk_zES8IOELiF_Sa
+            </a>
+          </p>
         </div>
         <h2 className={styles.footer__balance}>your balance: {balance} TON</h2>
       </footer>

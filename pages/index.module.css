@@ -58,7 +58,8 @@
 }
 
 .wallet_card__id {
-
+  display: flex;
+  gap: 16px;
 }
 
 @media screen and (max-width: 768px) {
