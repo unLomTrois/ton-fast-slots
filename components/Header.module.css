@@ -9,6 +9,14 @@
   text-align: center;
 }
 
+.header__title::after {
+  content: "still beta!";
+  font-size: 24px;
+  top: -30px;
+  position: relative;
+  color: gold;
+}
+
 .header__title > a {
   color: white;
 
