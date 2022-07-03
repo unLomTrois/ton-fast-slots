@@ -1,4 +1,10 @@
 .wrapper {
   /* background: #ff00ff; */
-  border-collapse: collapse
+  border-collapse: collapse;
+  background: #26a5e4;
+  display: grid;
+  grid-auto-rows: 1fr 1fr 1fr;
+  width: 100vw;
+  height: 100vh;
+
 }
