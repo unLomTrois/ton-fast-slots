@@ -5,11 +5,28 @@ import { Layout } from "../components/Layout";
 import { Header } from "../components/Header";
 import { SlotMachine } from "../components/SlotMachine";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 import BN from "bn.js";
 
 export default function Game() {
+  const router = useRouter();
+  const [gamekey, setGameKey] = useState();
+
+  // runs after component did mount
+  useEffect(() => {
+    // todo: validate game key on server side
+    const key = sessionStorage.getItem("game_key")
+    setGameKey(key)
+
+    console.log(key, gamekey)
+
+    if (key == undefined) {
+      router.replace("/");
+    }
+  }, [gamekey]);
+
   // ! bignumber
   const [balance, setBalance] = useState(0.222);
 
