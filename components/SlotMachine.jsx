@@ -313,7 +313,6 @@ export const SlotMachine = () => {
 
   return (
     <div className={styles.fullSlot}>
-      <h1 className={styles.casinoName}>casino montecarlo</h1>
       <h1 className={styles.price}>{"Jackpot: " + jackpot + "€"}</h1>
       <div className={styles.slot}>
         <div className={styles.row}>{row1()}</div>
