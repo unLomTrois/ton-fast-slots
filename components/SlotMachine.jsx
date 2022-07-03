@@ -1,86 +1,347 @@
-import { useRef, useState } from "react";
 
-import styles from "./SlotMachine.module.css"
+import React, { useState, useEffect } from "react";
+
+import styles from "./SlotMachine.module.css";
 
 export const SlotMachine = () => {
-  const [fruit1, setFruit1] = useState("🍒");
-  const [fruit2, setFruit2] = useState("🍒");
-  const [fruit3, setFruit3] = useState("🍒");
-  const [rolling, setRolling] = useState(false);
-  let slotRef = [useRef(null), useRef(null), useRef(null)];
-  const fruits = ["🍒", "🍉", "🍊", "🍓", "🍇", "🥝"];
+  const [spin, setSpin] = useState(false);
+  const [ring1, setRing1] = useState();
+  const [ring2, setRing2] = useState();
+  const [ring3, setRing3] = useState();
+  const [price, setPrice] = useState();
+  const [input, setInput] = useState();
+  const [realBet, setRealBet] = useState();
+  const [jackpot, setJackpot] = useState(0);
+  const [balance, setBalance] = useState(100000);
 
-  // to trigger roolling and maintain state
-  const roll = () => {
-    setRolling(true);
-    setTimeout(() => {
-      setRolling(false);
-    }, 700);
+  useEffect(() => {
+    win();
+  }, [ring3]);
 
-    // looping through all 3 slots to start rolling
-    slotRef.forEach((slot, i) => {
-      // this will trigger rolling effect
-      const selected = triggerSlotRotation(slot.current);
-      if (i + 1 == 1) setFruit1(selected);
-      else if (i + 1 == 2) setFruit2(selected);
-      else setFruit3(selected);
-    });
-  };
-
-  // this will create a rolling effect and return random selected option
-  const triggerSlotRotation = (ref) => {
-    function setTop(top) {
-      ref.style.top = `${top}px`;
+  function row1() {
+    if (!spin) {
+      return (
+        <>
+          <div className={styles.ringEnd}>🍓</div>
+          <div className={styles.ringEnd}>🍇</div>
+          <div className={styles.ringEnd}>🍊</div>
+          <div className={styles.ringEnd}>🥭</div>
+        </>
+      );
+    } else if (spin && ring1 === undefined) {
+      return (
+        <>
+          <div className={styles.ringMoving}>🍓</div>
+          <div className={styles.ringMoving}>🍇</div>
+          <div className={styles.ringMoving}>🍊</div>
+          <div className={styles.ringMoving}>🥭</div>
+        </>
+      );
+    } else if (ring1 >= 1 && ring1 <= 50) {
+      return (
+        <>
+          <div className={styles.ringEnd}>🍓</div>
+          <div className={styles.ringEnd}>🍇</div>
+          <div className={styles.ringEnd}>🍊</div>
+          <div className={styles.ringEnd}>🥭</div>
+        </>
+      );
+    } else if (ring1 > 50 && ring1 <= 75) {
+      return (
+        <>
+          <div className={styles.ringEnd}>🍇</div>
+          <div className={styles.ringEnd}>🍊</div>
+          <div className={styles.ringEnd}>🥭</div>
+          <div className={styles.ringEnd}>🍓</div>
+        </>
+      );
+    } else if (ring1 > 75 && ring1 <= 95) {
+      return (
+        <>
+          <div className={styles.ringEnd}>🍊</div>
+          <div className={styles.ringEnd}>🥭</div>
+          <div className={styles.ringEnd}>🍓</div>
+          <div className={styles.ringEnd}>🍇</div>
+        </>
+      );
+    } else if (ring1 > 95 && ring1 <= 100) {
+      return (
+        <>
+          <div className={styles.ringEnd}>🥭</div>
+          <div className={styles.ringEnd}>🍓</div>
+          <div className={styles.ringEnd}>🍇</div>
+          <div className={styles.ringEnd}>🍊</div>
+        </>
+      );
     }
-    let options = ref.children;
-    let randomOption = Math.floor(Math.random() * fruits.length);
-    let choosenOption = options[randomOption];
-    setTop(-choosenOption.offsetTop + 2);
-    return fruits[randomOption];
-  };
+  }
+
+  function row2() {
+    if (!spin) {
+      return (
+        <>
+          <div className={styles.ringEnd}>🥭</div>
+          <div className={styles.ringEnd}>🍓</div>
+          <div className={styles.ringEnd}>🍇</div>
+          <div className={styles.ringEnd}>🍊</div>
+        </>
+      );
+    } else if (spin && ring2 === undefined) {
+      return (
+        <>
+          <div className={styles.ringMoving}>🍓</div>
+          <div className={styles.ringMoving}>🍇</div>
+          <div className={styles.ringMoving}>🍊</div>
+          <div className={styles.ringMoving}>🥭</div>
+        </>
+      );
+    } else if (ring2 >= 1 && ring2 <= 50) {
+      return (
+        <>
+          <div className={styles.ringEnd}>🍓</div>
+          <div className={styles.ringEnd}>🍇</div>
+          <div className={styles.ringEnd}>🍊</div>
+          <div className={styles.ringEnd}>🥭</div>
+        </>
+      );
+    } else if (ring2 > 50 && ring2 <= 75) {
+      return (
+        <>
+          <div className={styles.ringEnd}>🍇</div>
+          <div className={styles.ringEnd}>🍊</div>
+          <div className={styles.ringEnd}>🥭</div>
+          <div className={styles.ringEnd}>🍓</div>
+        </>
+      );
+    } else if (ring2 > 75 && ring2 <= 95) {
+      return (
+        <>
+          <div className={styles.ringEnd}>🍊</div>
+          <div className={styles.ringEnd}>🥭</div>
+          <div className={styles.ringEnd}>🍓</div>
+          <div className={styles.ringEnd}>🍇</div>
+        </>
+      );
+    } else if (ring2 > 95 && ring2 <= 100) {
+      return (
+        <>
+          <div className={styles.ringEnd}>🥭</div>
+          <div className={styles.ringEnd}>🍓</div>
+          <div className={styles.ringEnd}>🍇</div>
+          <div className={styles.ringEnd}>🍊</div>
+        </>
+      );
+    }
+  }
+
+  function row3() {
+    if (!spin) {
+      return (
+        <>
+          <div className={styles.ringEnd}>🥭</div>
+          <div className={styles.ringEnd}>🍓</div>
+          <div className={styles.ringEnd}>🍇</div>
+          <div className={styles.ringEnd}>🍊</div>
+        </>
+      );
+    } else if (spin && ring3 === undefined) {
+      return (
+        <>
+          <div className={styles.ringMoving}>🍓</div>
+          <div className={styles.ringMoving}>🍇</div>
+          <div className={styles.ringMoving}>🍊</div>
+          <div className={styles.ringMoving}>🍋</div>
+          <div className={styles.ringMoving}>🍍</div>
+          <div className={styles.ringMoving}>🥭</div>
+        </>
+      );
+    } else if (ring3 >= 1 && ring3 <= 50) {
+      return (
+        <>
+          <div className={styles.ringEnd}>🍓</div>
+          <div className={styles.ringEnd}>🍇</div>
+          <div className={styles.ringEnd}>🍊</div>
+          <div className={styles.ringEnd}>🥭</div>
+        </>
+      );
+    } else if (ring3 > 50 && ring3 <= 75) {
+      return (
+        <>
+          <div className={styles.ringEnd}>🍇</div>
+          <div className={styles.ringEnd}>🍊</div>
+          <div className={styles.ringEnd}>🥭</div>
+          <div className={styles.ringEnd}>🍓</div>
+        </>
+      );
+    } else if (ring3 > 75 && ring3 <= 95) {
+      return (
+        <>
+          <div className={styles.ringEnd}>🍊</div>
+          <div className={styles.ringEnd}>🥭</div>
+          <div className={styles.ringEnd}>🍓</div>
+          <div className={styles.ringEnd}>🍇</div>
+        </>
+      );
+    } else if (ring3 > 95 && ring3 <= 100) {
+      return (
+        <>
+          <div className={styles.ringEnd}>🥭</div>
+          <div className={styles.ringEnd}>🍓</div>
+          <div className={styles.ringEnd}>🍇</div>
+          <div className={styles.ringEnd}>🍊</div>
+        </>
+      );
+    }
+  }
+
+  function rand() {
+    setRing1(Math.floor(Math.random() * (100 - 1) + 1));
+    setTimeout(function () {
+      setRing2(Math.floor(Math.random() * (100 - 1) + 1));
+    }, 1000);
+    setTimeout(function () {
+      setRing3(Math.floor(Math.random() * (100 - 1) + 1));
+    }, 2000);
+  }
+
+  function play() {
+    if (ring3 > 1 || !spin) {
+      if (input <= balance && input >= 1) {
+        setRealBet(input);
+        setSpin(true);
+        setRing1();
+        console.log(ring1);
+        setRing2();
+        setRing3();
+        setBalance(balance - input);
+        setJackpot(jackpot + input / 2);
+        setTimeout(function () {
+          rand();
+        }, 2000);
+      } else {
+        setPrice(10);
+      }
+    }
+  }
+
+  function win() {
+    if (ring1 <= 50 && ring2 <= 50 && ring3 <= 50 && ring1 !== undefined) {
+      setPrice(1);
+      setBalance(balance + balance * 15);
+    } else if (
+      ring1 > 50 &&
+      ring1 <= 75 &&
+      ring2 > 50 &&
+      ring2 <= 75 &&
+      ring3 > 50 &&
+      ring3 <= 75 &&
+      ring1 !== undefined
+    ) {
+      setPrice(2);
+      setBalance(balance + balance * 20);
+    } else if (
+      ring1 > 75 &&
+      ring1 <= 95 &&
+      ring2 > 75 &&
+      ring2 <= 95 &&
+      ring3 > 75 &&
+      ring3 <= 95 &&
+      ring1 !== undefined
+    ) {
+      setPrice(3);
+      setBalance(balance + balance * 25);
+    } else if (
+      ring1 > 95 &&
+      ring1 <= 100 &&
+      ring2 > 95 &&
+      ring2 <= 100 &&
+      ring3 > 95 &&
+      ring3 <= 100 &&
+      ring1 !== undefined
+    ) {
+      setPrice(4);
+      setBalance(balance + jackpot);
+      setJackpot(0);
+    } else {
+      setPrice(0);
+    }
+  }
+
+  function premio() {
+    if (price === 1 && ring3 > 1) {
+      return (
+        <p className={styles.priceInd}>
+          {"🍇 X15 You've won " + realBet * 15 + "€!"}
+        </p>
+      );
+    } else if (price === 2 && ring3 > 1) {
+      return (
+        <p className={styles.priceInd}>
+          {"🍊 X20 You've won " + realBet * 20 + "€!"}
+        </p>
+      );
+    } else if (price === 3 && ring3 > 1) {
+      return (
+        <p className={styles.priceInd}>
+          {"🥭 X25 You've won " + realBet * 25 + "€!"}
+        </p>
+      );
+    } else if (price === 4 && ring3 > 1) {
+      return (
+        <p className={styles.priceInd}>
+          {"🍓 Jackpot! You've won: " + jackpot + "€!"}
+        </p>
+      );
+    } else if (price === 0 && ring3 > 1) {
+      return <p className={styles.priceInd}>😧 ¡So close! But no luck...</p>;
+    } else if (price === 10) {
+      return (
+        <p className={styles.priceInd}>
+          🥶 <span style={{ color: `red` }}>Not enough funds</span>{" "}
+        </p>
+      );
+    }
+  }
+
+  function numChecker(e) {
+    const value = e.target.value;
+    const regex = /^[0-9]+$/;
+    if ((value.match(regex) && parseInt(value) >= 0) || value === "") {
+      setInput(value);
+    }
+  }
 
   return (
-    <div className="SlotMachine">
+    <div className={styles.fullSlot}>
+      <h1 className={styles.casinoName}>casino montecarlo</h1>
+      <h1 className={styles.price}>{"Jackpot: " + jackpot + "€"}</h1>
       <div className={styles.slot}>
-        <section>
-          <div className={styles.container} ref={slotRef[0]}>
-            {fruits.map((fruit, i) => (
-              <div key={i}>
-                <span>{fruit}</span>
-              </div>
-            ))}
-          </div>
-        </section>
+        <div className={styles.row}>{row1()}</div>
+        <div className={styles.row}>{row2()}</div>
+        <div className={styles.row}>{row3()}</div>
       </div>
-      <div className={styles.slot}>
-        <section>
-          <div className={styles.container} ref={slotRef[1]}>
-            {fruits.map((fruit) => (
-              <div>
-                <span>{fruit}</span>
-              </div>
-            ))}
-          </div>
-        </section>
+      <h1 className={styles.price}>{premio()}</h1>
+      <div className={styles.slotFoot}>
+        <input
+          value={input}
+          type="number"
+          onChange={(e) => numChecker(e)}
+          className={styles.betInput}
+          placeholder="0€"
+        ></input>
+        <button className={styles.spinButton} onClick={() => play()}>
+          Spin
+        </button>
       </div>
-      <div className={styles.slot}>
-        <section>
-          <div className={styles.container} ref={slotRef[2]}>
-            {fruits.map((fruit) => (
-              <div>
-                <span>{fruit}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-      </div>
-      <div
-        className={!rolling ? [styles.roll, styles.rolling] : styles.roll}
-        onClick={!rolling && roll}
-        disabled={rolling}
+      <h1 className={styles.price}>
+        {"Available cash: " + Math.round(balance * 100) / 100 + "€"}
+      </h1>
+      <button
+        onClick={() => setBalance(balance + 1000)}
+        className={styles.buyMoreButton}
       >
-        {rolling ? "Rolling..." : "ROLL"}
-      </div>
+        Add 1000 €
+      </button>
     </div>
   );
-}
+};
