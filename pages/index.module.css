@@ -40,6 +40,25 @@
 
 .footer {
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+
+}
+
+.wallet_card {
+  background-color: white;
+  width: 100vh;
+  padding: 16px;
+  color: black;
+  font-size: 24px;
+  font-weight: bolder;
+  border-radius: 30px;
+}
+
+.wallet_card__id {
+
 }
 
 @media screen and (max-width: 768px) {

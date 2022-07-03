@@ -110,7 +110,7 @@
   flex: 1 0 auto;
   margin: 0 5px 0 5px;
   overflow: hidden;
-  border: solid 2px #ffd9009c;
+  /* border: solid 2px #ffd9009c; */
   background: linear-gradient(
     0deg,
     rgb(204, 203, 203) 0%,

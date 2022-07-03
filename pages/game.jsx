@@ -17,26 +17,28 @@ export default function Game() {
   // runs after component did mount
   useEffect(() => {
     // todo: validate game key on server side
-    const key = sessionStorage.getItem("game_key")
-    setGameKey(key)
+    const key = sessionStorage.getItem("game_key");
+    setGameKey(key);
 
-    console.log(key, gamekey)
+    console.log(key, gamekey);
 
     if (key == undefined) {
       router.replace("/");
     }
   }, [gamekey]);
 
-  // ! bignumber
-  const [balance, setBalance] = useState(0.222);
-
-  // console.log(balance.toString(10))
+  // todo: bignumber
+  const [balance, setBalance] = useState(0.123);
 
   return (
     <Layout>
       <Head>
         <title>Game</title>
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.cryptofonts.com/1.4.0/cryptofont.css"
+        />
       </Head>
 
       <Header />
@@ -46,7 +48,11 @@ export default function Game() {
       </main>
 
       <footer className={styles.footer}>
-        <h2 className={styles.footer__balance}>balance: {balance} TON</h2>
+        <div className={styles.wallet_card}>
+        { /* todo: copy address */ }
+          <p className={styles.wallet_card__id}>your wallet: EQCAe8p18bYfHZvf-T3EW-sBtpkYuuoPPk_zES8IOELiF_Sa</p>
+        </div>
+        <h2 className={styles.footer__balance}>your balance: {balance} TON</h2>
       </footer>
     </Layout>
   );

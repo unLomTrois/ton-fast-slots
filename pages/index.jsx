@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>sasha vasyanov Next App</title>
+        <title>420hack</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

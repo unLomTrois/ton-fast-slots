@@ -8,3 +8,8 @@
 
   text-align: center;
 }
+
+.header__title > a {
+  color: white;
+
+}

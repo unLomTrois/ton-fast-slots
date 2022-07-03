@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 
 import styles from "./SlotMachine.module.css";
@@ -22,55 +21,103 @@ export const SlotMachine = () => {
     if (!spin) {
       return (
         <>
-          <div className={styles.ringEnd}>🍓</div>
-          <div className={styles.ringEnd}>🍇</div>
-          <div className={styles.ringEnd}>🍊</div>
-          <div className={styles.ringEnd}>🥭</div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-btc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-eth"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-usdt"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-ltc"></i>
+          </div>
         </>
       );
     } else if (spin && ring1 === undefined) {
       return (
         <>
-          <div className={styles.ringMoving}>🍓</div>
-          <div className={styles.ringMoving}>🍇</div>
-          <div className={styles.ringMoving}>🍊</div>
-          <div className={styles.ringMoving}>🥭</div>
+          <div className={styles.ringMoving}>
+            <i class="cf cf-btc"></i>
+          </div>
+          <div className={styles.ringMoving}>
+            <i class="cf cf-eth"></i>
+          </div>
+          <div className={styles.ringMoving}>
+            <i class="cf cf-usdt"></i>
+          </div>
+          <div className={styles.ringMoving}>
+            <i class="cf cf-ltc"></i>
+          </div>
         </>
       );
     } else if (ring1 >= 1 && ring1 <= 50) {
       return (
         <>
-          <div className={styles.ringEnd}>🍓</div>
-          <div className={styles.ringEnd}>🍇</div>
-          <div className={styles.ringEnd}>🍊</div>
-          <div className={styles.ringEnd}>🥭</div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-btc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-eth"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-usdt"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-ltc"></i>
+          </div>
         </>
       );
     } else if (ring1 > 50 && ring1 <= 75) {
       return (
         <>
-          <div className={styles.ringEnd}>🍇</div>
-          <div className={styles.ringEnd}>🍊</div>
-          <div className={styles.ringEnd}>🥭</div>
-          <div className={styles.ringEnd}>🍓</div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-eth"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-usdt"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-ltc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-btc"></i>
+          </div>
         </>
       );
     } else if (ring1 > 75 && ring1 <= 95) {
       return (
         <>
-          <div className={styles.ringEnd}>🍊</div>
-          <div className={styles.ringEnd}>🥭</div>
-          <div className={styles.ringEnd}>🍓</div>
-          <div className={styles.ringEnd}>🍇</div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-usdt"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-ltc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-btc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-eth"></i>
+          </div>
         </>
       );
     } else if (ring1 > 95 && ring1 <= 100) {
       return (
         <>
-          <div className={styles.ringEnd}>🥭</div>
-          <div className={styles.ringEnd}>🍓</div>
-          <div className={styles.ringEnd}>🍇</div>
-          <div className={styles.ringEnd}>🍊</div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-ltc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-btc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-eth"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-usdt"></i>
+          </div>
         </>
       );
     }
@@ -80,55 +127,103 @@ export const SlotMachine = () => {
     if (!spin) {
       return (
         <>
-          <div className={styles.ringEnd}>🥭</div>
-          <div className={styles.ringEnd}>🍓</div>
-          <div className={styles.ringEnd}>🍇</div>
-          <div className={styles.ringEnd}>🍊</div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-ltc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-btc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-eth"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-usdt"></i>
+          </div>
         </>
       );
     } else if (spin && ring2 === undefined) {
       return (
         <>
-          <div className={styles.ringMoving}>🍓</div>
-          <div className={styles.ringMoving}>🍇</div>
-          <div className={styles.ringMoving}>🍊</div>
-          <div className={styles.ringMoving}>🥭</div>
+          <div className={styles.ringMoving}>
+            <i class="cf cf-btc"></i>
+          </div>
+          <div className={styles.ringMoving}>
+            <i class="cf cf-eth"></i>
+          </div>
+          <div className={styles.ringMoving}>
+            <i class="cf cf-usdt"></i>
+          </div>
+          <div className={styles.ringMoving}>
+            <i class="cf cf-ltc"></i>
+          </div>
         </>
       );
     } else if (ring2 >= 1 && ring2 <= 50) {
       return (
         <>
-          <div className={styles.ringEnd}>🍓</div>
-          <div className={styles.ringEnd}>🍇</div>
-          <div className={styles.ringEnd}>🍊</div>
-          <div className={styles.ringEnd}>🥭</div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-btc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-eth"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-usdt"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-ltc"></i>
+          </div>
         </>
       );
     } else if (ring2 > 50 && ring2 <= 75) {
       return (
         <>
-          <div className={styles.ringEnd}>🍇</div>
-          <div className={styles.ringEnd}>🍊</div>
-          <div className={styles.ringEnd}>🥭</div>
-          <div className={styles.ringEnd}>🍓</div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-eth"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-usdt"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-ltc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-btc"></i>
+          </div>
         </>
       );
     } else if (ring2 > 75 && ring2 <= 95) {
       return (
         <>
-          <div className={styles.ringEnd}>🍊</div>
-          <div className={styles.ringEnd}>🥭</div>
-          <div className={styles.ringEnd}>🍓</div>
-          <div className={styles.ringEnd}>🍇</div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-usdt"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-ltc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-btc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-eth"></i>
+          </div>
         </>
       );
     } else if (ring2 > 95 && ring2 <= 100) {
       return (
         <>
-          <div className={styles.ringEnd}>🥭</div>
-          <div className={styles.ringEnd}>🍓</div>
-          <div className={styles.ringEnd}>🍇</div>
-          <div className={styles.ringEnd}>🍊</div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-ltc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-btc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-eth"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-usdt"></i>
+          </div>
         </>
       );
     }
@@ -138,57 +233,103 @@ export const SlotMachine = () => {
     if (!spin) {
       return (
         <>
-          <div className={styles.ringEnd}>🥭</div>
-          <div className={styles.ringEnd}>🍓</div>
-          <div className={styles.ringEnd}>🍇</div>
-          <div className={styles.ringEnd}>🍊</div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-ltc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-btc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-eth"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-usdt"></i>
+          </div>
         </>
       );
     } else if (spin && ring3 === undefined) {
       return (
         <>
-          <div className={styles.ringMoving}>🍓</div>
-          <div className={styles.ringMoving}>🍇</div>
-          <div className={styles.ringMoving}>🍊</div>
-          <div className={styles.ringMoving}>🍋</div>
-          <div className={styles.ringMoving}>🍍</div>
-          <div className={styles.ringMoving}>🥭</div>
+          <div className={styles.ringMoving}>
+            <i class="cf cf-btc"></i>
+          </div>
+          <div className={styles.ringMoving}>
+            <i class="cf cf-eth"></i>
+          </div>
+          <div className={styles.ringMoving}>
+            <i class="cf cf-usdt"></i>
+          </div>
+          <div className={styles.ringMoving}>
+            <i class="cf cf-ltc"></i>
+          </div>
         </>
       );
     } else if (ring3 >= 1 && ring3 <= 50) {
       return (
         <>
-          <div className={styles.ringEnd}>🍓</div>
-          <div className={styles.ringEnd}>🍇</div>
-          <div className={styles.ringEnd}>🍊</div>
-          <div className={styles.ringEnd}>🥭</div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-btc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-eth"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-usdt"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-ltc"></i>
+          </div>
         </>
       );
     } else if (ring3 > 50 && ring3 <= 75) {
       return (
         <>
-          <div className={styles.ringEnd}>🍇</div>
-          <div className={styles.ringEnd}>🍊</div>
-          <div className={styles.ringEnd}>🥭</div>
-          <div className={styles.ringEnd}>🍓</div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-eth"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-usdt"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-ltc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-btc"></i>
+          </div>
         </>
       );
     } else if (ring3 > 75 && ring3 <= 95) {
       return (
         <>
-          <div className={styles.ringEnd}>🍊</div>
-          <div className={styles.ringEnd}>🥭</div>
-          <div className={styles.ringEnd}>🍓</div>
-          <div className={styles.ringEnd}>🍇</div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-usdt"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-ltc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-btc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-eth"></i>
+          </div>
         </>
       );
     } else if (ring3 > 95 && ring3 <= 100) {
       return (
         <>
-          <div className={styles.ringEnd}>🥭</div>
-          <div className={styles.ringEnd}>🍓</div>
-          <div className={styles.ringEnd}>🍇</div>
-          <div className={styles.ringEnd}>🍊</div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-ltc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-btc"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-eth"></i>
+          </div>
+          <div className={styles.ringEnd}>
+            <i class="cf cf-usdt"></i>
+          </div>
         </>
       );
     }
@@ -267,42 +408,6 @@ export const SlotMachine = () => {
     }
   }
 
-  function premio() {
-    if (price === 1 && ring3 > 1) {
-      return (
-        <p className={styles.priceInd}>
-          {"🍇 X15 You've won " + realBet * 15 + "€!"}
-        </p>
-      );
-    } else if (price === 2 && ring3 > 1) {
-      return (
-        <p className={styles.priceInd}>
-          {"🍊 X20 You've won " + realBet * 20 + "€!"}
-        </p>
-      );
-    } else if (price === 3 && ring3 > 1) {
-      return (
-        <p className={styles.priceInd}>
-          {"🥭 X25 You've won " + realBet * 25 + "€!"}
-        </p>
-      );
-    } else if (price === 4 && ring3 > 1) {
-      return (
-        <p className={styles.priceInd}>
-          {"🍓 Jackpot! You've won: " + jackpot + "€!"}
-        </p>
-      );
-    } else if (price === 0 && ring3 > 1) {
-      return <p className={styles.priceInd}>😧 ¡So close! But no luck...</p>;
-    } else if (price === 10) {
-      return (
-        <p className={styles.priceInd}>
-          🥶 <span style={{ color: `red` }}>Not enough funds</span>{" "}
-        </p>
-      );
-    }
-  }
-
   function numChecker(e) {
     const value = e.target.value;
     const regex = /^[0-9]+$/;
@@ -313,13 +418,12 @@ export const SlotMachine = () => {
 
   return (
     <div className={styles.fullSlot}>
-      <h1 className={styles.price}>{"Jackpot: " + jackpot + "€"}</h1>
+      {/* <h1 className={styles.price}>{"Jackpot: " + jackpot + "€"}</h1> */}
       <div className={styles.slot}>
         <div className={styles.row}>{row1()}</div>
         <div className={styles.row}>{row2()}</div>
         <div className={styles.row}>{row3()}</div>
       </div>
-      <h1 className={styles.price}>{premio()}</h1>
       <div className={styles.slotFoot}>
         <input
           value={input}
@@ -332,15 +436,15 @@ export const SlotMachine = () => {
           Spin
         </button>
       </div>
-      <h1 className={styles.price}>
+      {/* <h1 className={styles.price}>
         {"Available cash: " + Math.round(balance * 100) / 100 + "€"}
-      </h1>
-      <button
+      </h1> */}
+      {/* <button
         onClick={() => setBalance(balance + 1000)}
         className={styles.buyMoreButton}
       >
         Add 1000 €
-      </button>
+      </button> */}
     </div>
   );
 };
