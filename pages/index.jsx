@@ -3,6 +3,8 @@ import { Layout } from "../components/Layout";
 import { Header } from "../components/Header";
 
 import styles from "./index.module.css";
+import { SlotMachine } from "../components/SlotMachine";
+
 
 export default function Home() {
   return (
@@ -15,6 +17,8 @@ export default function Home() {
       <Header />
 
       <main className={styles.main}>
+        <SlotMachine></SlotMachine>
+
         {/* <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque
           laudantium omnis obcaecati quaerat. Veniam, vitae. Doloremque
