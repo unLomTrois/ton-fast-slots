@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "bn.js": "^5.2.1",
     "lodash-es": "^4.17.21",
     "next": "latest",
     "react": "17.0.2",
